@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const dbURL='mongodb+srv://rahulrudra:rahulrudra@cluster0.z8yh46g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
 const app = express();
 const PORT = 5000;
 
@@ -11,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/todoDB', {
+mongoose.connect(dbURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
